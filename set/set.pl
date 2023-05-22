@@ -1,7 +1,7 @@
 isUnion([], Set2, Set2).
-isUnion([H|T], Set2, _) :-
+isUnion([H|T], Set2, Union) :-
     member(H, Set2),
-    isUnion(T, Set2).
+    isUnion(T, Set2, Union).
 isUnion([H|T], Set2, [H|Union]) :-
     not(member(H, Set2)),
     isUnion(T, Set2, Union).
